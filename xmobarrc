@@ -15,17 +15,11 @@ Config {  font    = "xft:SpaceMono Nerd Font:pixelsize=13:antialias=true:hinting
        , allDesktops = True
        , overrideRedirect = True
        , commands = [ Run Date " %H:%M:%S " "date" 10
-                    , Run Volume "default" "Master"
-                        [ "-t", "<status>", "--"
-                        , "--on", "<fc=#ffffff><fn=1>\xf028</fn> <volume>%</fc>"
-                        , "--onc", "#ffffff"
-                       ] 1 
-                    , Run Battery [ "-t", "<fn=1></fn> <left>%" ] 60
                     , Run UnsafeStdinReader
                     ]
        , sepChar = "%"
        , alignSep = "}{"
-       , template = " %UnsafeStdinReader% } { %default:Master% | %battery%  <fn=1><fc=#ffffff>%date%</fc></fn>" 
+       , template = " %UnsafeStdinReader% } <fn=1><fc=#ffffff>%date%</fc></fn>" 
 
 }
 
