@@ -44,7 +44,7 @@ import XMonad.Util.EZConfig(additionalKeys)
 
 -- My preferred terminal program.
 --
-myTerminal      = "alacritty"
+myTerminal      = "xfce4-terminal"
 
 -- Whether focus follows the mouse pointer.
 myFocusFollowsMouse :: Bool
@@ -84,7 +84,7 @@ windowCount = gets $ Just . show . length . W.integrate' . W.stack . W.workspace
 -- Border colors for unfocused and focused windows.
 --
 myNormalBorderColor  = "#000000"
-myFocusedBorderColor = "#ffffff"
+myFocusedBorderColor = "#faf9f6"
 
 ------------------------------------------------------------------------
 -- Key bindings.
@@ -96,7 +96,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
 
     -- launch rofi
 
-    , ((modm .|. shiftMask, xK_Return), spawn "rofi -show drun")
+    , ((modm .|. shiftMask, xK_Return), spawn "rofi -show drun -show-icons")
 
     -- launch brave
     , ((modm,               xK_f     ), spawn "firefox")
@@ -278,16 +278,16 @@ myEventHook = mempty
 ------------------------------------------------------------------------
 -- Startup hook
 
-myStartupHook = do 
-    spawnOnce "xrandr --output eDP1 --mode 1920x1080 --primary --auto --output HDMI1 --mode 1920x1080 --right-of eDP1 --auto &"
-    spawnOnce "picom --config ~/.config/picom/picom.conf &"
-    spawnOnce "nitrogen --restore &" 
-    spawnOnce "setxkbmap hr &"
+myStartupHook = mempty 
+    --spawnOnce "xrandr --output eDP1 --mode 1920x1080 --primary --auto --output HDMI1 --mode 1920x1080 --right-of eDP1 --auto "
+    --spawnOnce "picom --config ~/.config/picom/picom.conf "
+    --spawnOnce "nitrogen --restore " 
+    --spawnOnce "setxkbmap hr "
 -------------------------------------------------------------------------
 -- Run xmonad with the settings specified.
 --
 main = do
-   xmproc0 <- spawnPipe "xmobar -x 0 /home/corazone/.config/xmobar/xmobarrc.hs"
+   xmproc0 <- spawnPipe "xmobar -x 0 /home/corazone/.config/xmobar/xmobarrc"
 
    xmonad $ docks def {
 
