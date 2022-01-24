@@ -19,7 +19,7 @@ Config {  font    = "xft:SpaceMono Nerd Font:pixelsize=13:antialias=true:hinting
                     ]
        , sepChar = "%"
        , alignSep = "}{"
-       , template = " %UnsafeStdinReader% } <fn=1><fc=#ffffff>%date%</fc></fn>" 
+       , template = " %UnsafeStdinReader% }{ <fn=1><fc=#ffffff>%date%</fc></fn>" 
 
 }
 
