@@ -3,6 +3,7 @@ call plug#begin()
  Plug 'mattn/emmet-vim'
  Plug 'neoclide/coc.nvim', {'branch': 'release'}
  Plug 'preservim/nerdtree'
+ Plug 'vim-airline/vim-airline'
  Plug 'vim-airline/vim-airline-themes'
  Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
  Plug 'ryanoasis/vim-devicons'
@@ -10,6 +11,7 @@ call plug#begin()
  Plug 'tpope/vim-fugitive'
  Plug 'chriskempson/base16-vim'
  Plug 'elixir-editors/vim-elixir'
+ Plug 'chun-yang/auto-pairs'
 call plug#end()
 
 "Random settings
@@ -221,3 +223,4 @@ nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 
 "Uses terminal colors
 autocmd VimEnter * hi Normal ctermbg=NONE guibg=NONE
+
