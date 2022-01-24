@@ -278,11 +278,11 @@ myEventHook = mempty
 ------------------------------------------------------------------------
 -- Startup hook
 
-myStartupHook = mempty 
-    --spawnOnce "xrandr --output eDP1 --mode 1920x1080 --primary --auto --output HDMI1 --mode 1920x1080 --right-of eDP1 --auto "
-    --spawnOnce "picom --config ~/.config/picom/picom.conf "
-    --spawnOnce "nitrogen --restore " 
-    --spawnOnce "setxkbmap hr "
+myStartupHook = do 
+    spawnOnce "xrandr --output eDP1 --mode 1920x1080 --primary --auto --output HDMI1 --mode 1920x1080 --right-of eDP1 --auto "
+    spawnOnce "picom --config ~/.config/picom/picom.conf "
+    spawnOnce "nitrogen --restore " 
+    spawnOnce "setxkbmap hr "
 -------------------------------------------------------------------------
 -- Run xmonad with the settings specified.
 --
